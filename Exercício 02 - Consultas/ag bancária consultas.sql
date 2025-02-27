@@ -1,8 +1,23 @@
 --1. Mostrar todos os clientes com saldo entre 10000 e 20000.
 
+SELECT c.cliente_cod, c.cliente_nome, ct.conta_numero, ct.saldo
+FROM cliente c
+JOIN conta ct ON c.cliente_cod = ct.cliente_cliente_cod
+WHERE ct.saldo BETWEEN 10000 AND 20000;
+
+
 --2. Mostrar todos os clientes com emprestimos.
 
+SELECT c.cliente_cod, c.cliente_nome, e.emprestimo_numero, e.quantia
+FROM cliente c
+JOIN emprestimo e ON c.cliente_cod = e.cliente_cliente_cod;
+
+
 --3. Mostrar todos os clientes que moram em Niterói. 
+
+SELECT cliente_cod, cliente_nome, rua, cidade
+FROM cliente
+WHERE cidade = 'Niterói';
 
 --4. Encontre os nomes e cidades de clientes que possuam empréstimos em alguma agência
 
